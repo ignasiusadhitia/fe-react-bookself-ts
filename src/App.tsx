@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
+import React from "react";
+import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import AddBook from "./pages/AddBook";
-import Book from "./types/Book";
 import EditBook from "./pages/EditBook";
+import Home from "./pages/Home";
 
 const App: React.FC = () => {
   return (
