@@ -1,3 +1,22 @@
 {
-  "books": []
+  "books": [
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "description": "A novel of warmth and humor, despite dealing with serious issues of rape and racial inequality.",
+      "id": "1319"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism.",
+      "id": "8e10"
+    },
+    {
+      "id": "9261",
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "description": "An epic tale of obsession and revenge between Captain Ahab and the white whale Moby Dick."
+    }
+  ]
 }

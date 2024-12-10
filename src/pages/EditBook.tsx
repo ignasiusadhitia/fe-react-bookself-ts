@@ -1,26 +1,28 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import BookForm from "../components/BookForm";
 import Book from "../types/Book";
 import apiClient from "../utils/api";
 import Toast from "../components/Toast";
 
-const AddBook: React.FC = () => {
+const EditBook: React.FC = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+
   const handleSubmit = (book: Omit<Book, "id">) => {
     apiClient
-      .post("/books", book)
+      .put(`/books/${id}`, book)
       .then(() => {
         Toast({
           icon: "success",
-          title: "Book has been added successfully",
+          title: "Book has been updated successfully",
         });
         navigate("/");
       })
       .catch((err) => {
         Toast({
           icon: "error",
-          title: "Failed to add the book",
+          title: "Failed to update the book",
         });
         console.error(err);
       });
@@ -28,10 +30,10 @@ const AddBook: React.FC = () => {
 
   return (
     <div className="container mt-4">
-      <h1>Add a New Book</h1>
+      <h1>Edit Book</h1>
       <BookForm onSubmit={handleSubmit} />
     </div>
   );
 };
 
-export default AddBook;
+export default EditBook;
